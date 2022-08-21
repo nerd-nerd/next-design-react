@@ -1,7 +1,8 @@
+/* stylelint-disable function-no-unknown */
 /* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
 @import '../color/colors';
 
-@theme: default;
+@theme: variable;
 
 // The prefix to use on all css classes from ant.
 @next-prefix: next-design;
@@ -9,46 +10,103 @@
 // An override for the html selector for theme prefixes
 @html-selector: html;
 
-// [CSS-VARIABLE-REPLACE-BEGIN: html-variables]
-// [CSS-VARIABLE-REPLACE-END: html-variables]
+@{html-selector} {
+  @base-primary: @blue-6;
+
+  // ========= Primary Color =========
+  --@{next-prefix}-primary-color: @base-primary;
+  --@{next-prefix}-primary-color-hover: color(~`colorpalette('@{base-primary}', 5) `);
+  --@{next-prefix}-primary-color-active: color(~`colorpalette('@{base-primary}', 7) `);
+  --@{next-prefix}-primary-color-outline: fade(@base-primary, @outline-fade);
+
+  // Legacy
+  @legacy-primary-1: color(~`colorPalette('@{base-primary}', 1) `);
+
+  --@{next-prefix}-primary-1: @legacy-primary-1;
+  --@{next-prefix}-primary-2: color(~`colorpalette('@{base-primary}', 2) `);
+  --@{next-prefix}-primary-3: color(~`colorpalette('@{base-primary}', 3) `);
+  --@{next-prefix}-primary-4: color(~`colorpalette('@{base-primary}', 4) `);
+  --@{next-prefix}-primary-5: color(~`colorpalette('@{base-primary}', 5) `);
+  --@{next-prefix}-primary-6: @base-primary;
+  --@{next-prefix}-primary-7: color(~`colorpalette('@{base-primary}', 7) `);
+
+  // Deprecated
+  --@{next-prefix}-primary-color-deprecated-pure: ~'';
+  --@{next-prefix}-primary-color-deprecated-l-35: lighten(@base-primary, 35%);
+  --@{next-prefix}-primary-color-deprecated-l-20: lighten(@base-primary, 20%);
+  --@{next-prefix}-primary-color-deprecated-t-20: tint(@base-primary, 20%);
+  --@{next-prefix}-primary-color-deprecated-t-50: tint(@base-primary, 50%);
+  --@{next-prefix}-primary-color-deprecated-f-12: fade(@base-primary, 12%);
+  --@{next-prefix}-primary-color-active-deprecated-f-30: fade(@legacy-primary-1, 30%);
+  --@{next-prefix}-primary-color-active-deprecated-d-02: darken(@legacy-primary-1, 2%);
+
+  // ========= Success Color =========
+  --@{next-prefix}-success-color: @green-6;
+  --@{next-prefix}-success-color-hover: color(~`colorpalette('@{green-6}', 5) `);
+  --@{next-prefix}-success-color-active: color(~`colorpalette('@{green-6}', 7) `);
+  --@{next-prefix}-success-color-outline: fade(@green-6, @outline-fade);
+  --@{next-prefix}-success-color-deprecated-bg: ~`colorpalette('@{green-6}', 1) `;
+  --@{next-prefix}-success-color-deprecated-border: ~`colorpalette('@{green-6}', 3) `;
+
+  // ========== Error Color ==========
+  --@{next-prefix}-error-color: @red-5;
+  --@{next-prefix}-error-color-hover: color(~`colorpalette('@{red-5}', 5) `);
+  --@{next-prefix}-error-color-active: color(~`colorpalette('@{red-5}', 7) `);
+  --@{next-prefix}-error-color-outline: fade(@red-5, @outline-fade);
+  --@{next-prefix}-error-color-deprecated-bg: ~`colorpalette('@{red-5}', 1) `;
+  --@{next-prefix}-error-color-deprecated-border: ~`colorpalette('@{red-5}', 3) `;
+
+  // ========= Warning Color =========
+  --@{next-prefix}-warning-color: @gold-6;
+  --@{next-prefix}-warning-color-hover: color(~`colorpalette('@{gold-6}', 5) `);
+  --@{next-prefix}-warning-color-active: color(~`colorpalette('@{gold-6}', 7) `);
+  --@{next-prefix}-warning-color-outline: fade(@gold-6, @outline-fade);
+  --@{next-prefix}-warning-color-deprecated-bg: ~`colorpalette('@{gold-6}', 1) `;
+  --@{next-prefix}-warning-color-deprecated-border: ~`colorpalette('@{gold-6}', 3) `;
+
+  // ========== Info Color ===========
+  --@{next-prefix}-info-color: @base-primary;
+  --@{next-prefix}-info-color-deprecated-bg: ~`colorpalette('@{base-primary}', 1) `;
+  --@{next-prefix}-info-color-deprecated-border: ~`colorpalette('@{base-primary}', 3) `;
+}
 
 // -------- Colors -----------
 // >>> Primary
-@primary-color: @blue-6;
-@primary-color-hover: color(~`colorPalette('@{primary-color}', 5) `);
-@primary-color-active: color(~`colorPalette('@{primary-color}', 7) `);
-@primary-color-outline: fade(@primary-color, @outline-fade);
+@primary-color: ~'var(--@{next-prefix}-primary-color)';
+@primary-color-hover: ~'var(--@{next-prefix}-primary-color-hover)';
+@primary-color-active: ~'var(--@{next-prefix}-primary-color-active)';
+@primary-color-outline: ~'var(--@{next-prefix}-primary-color-outline)';
 
-@processing-color: @blue-6;
+@processing-color: @primary-color;
 
 // >>> Info
-@info-color: @primary-color;
-@info-color-deprecated-bg: color(~`colorPalette('@{info-color}', 1) `);
-@info-color-deprecated-border: color(~`colorPalette('@{info-color}', 3) `);
+@info-color: ~'var(--@{next-prefix}-info-color)';
+@info-color-deprecated-bg: ~'var(--@{next-prefix}-info-color-deprecated-bg)';
+@info-color-deprecated-border: ~'var(--@{next-prefix}-info-color-deprecated-border)';
 
 // >>> Success
-@success-color: @green-6;
-@success-color-hover: color(~`colorPalette('@{success-color}', 5) `);
-@success-color-active: color(~`colorPalette('@{success-color}', 7) `);
-@success-color-outline: fade(@success-color, @outline-fade);
-@success-color-deprecated-bg: color(~`colorPalette('@{success-color}', 1) `);
-@success-color-deprecated-border: color(~`colorPalette('@{success-color}', 3) `);
+@success-color: ~'var(--@{next-prefix}-success-color)';
+@success-color-hover: ~'var(--@{next-prefix}-success-color-hover)';
+@success-color-active: ~'var(--@{next-prefix}-success-color-active)';
+@success-color-outline: ~'var(--@{next-prefix}-success-color-outline)';
+@success-color-deprecated-bg: ~'var(--@{next-prefix}-success-color-deprecated-bg)';
+@success-color-deprecated-border: ~'var(--@{next-prefix}-success-color-deprecated-border)';
 
 // >>> Warning
-@warning-color: @gold-6;
-@warning-color-hover: color(~`colorPalette('@{warning-color}', 5) `);
-@warning-color-active: color(~`colorPalette('@{warning-color}', 7) `);
-@warning-color-outline: fade(@warning-color, @outline-fade);
-@warning-color-deprecated-bg: color(~`colorPalette('@{warning-color}', 1) `);
-@warning-color-deprecated-border: color(~`colorPalette('@{warning-color}', 3) `);
+@warning-color: ~'var(--@{next-prefix}-warning-color)';
+@warning-color-hover: ~'var(--@{next-prefix}-warning-color-hover)';
+@warning-color-active: ~'var(--@{next-prefix}-warning-color-active)';
+@warning-color-outline: ~'var(--@{next-prefix}-warning-color-outline)';
+@warning-color-deprecated-bg: ~'var(--@{next-prefix}-warning-color-deprecated-bg)';
+@warning-color-deprecated-border: ~'var(--@{next-prefix}-warning-color-deprecated-border)';
 
 // >>> Error
-@error-color: @red-5;
-@error-color-hover: color(~`colorPalette('@{error-color}', 5) `);
-@error-color-active: color(~`colorPalette('@{error-color}', 7) `);
-@error-color-outline: fade(@error-color, @outline-fade);
-@error-color-deprecated-bg: color(~`colorPalette('@{error-color}', 1) `);
-@error-color-deprecated-border: color(~`colorPalette('@{error-color}', 3) `);
+@error-color: ~'var(--@{next-prefix}-error-color)';
+@error-color-hover: ~'var(--@{next-prefix}-error-color-hover)';
+@error-color-active: ~'var(--@{next-prefix}-error-color-active)';
+@error-color-outline: ~'var(--@{next-prefix}-error-color-outline)';
+@error-color-deprecated-bg: ~'var(--@{next-prefix}-error-color-deprecated-bg)';
+@error-color-deprecated-border: ~'var(--@{next-prefix}-error-color-deprecated-border)';
 
 @highlight-color: @red-5;
 @normal-color: #d9d9d9;
@@ -57,15 +115,13 @@
 
 // Color used by default to control hover and active backgrounds and for
 // alert info backgrounds.
-@primary-1: color(~`colorPalette('@{primary-color}', 1) `); // replace tint(@primary-color, 90%)
-@primary-2: color(~`colorPalette('@{primary-color}', 2) `); // replace tint(@primary-color, 80%)
-@primary-3: color(~`colorPalette('@{primary-color}', 3) `); // unused
-@primary-4: color(~`colorPalette('@{primary-color}', 4) `); // unused
-@primary-5: color(
-  ~`colorPalette('@{primary-color}', 5) `
-); // color used to control the text color in many active and hover states, replace tint(@primary-color, 20%)
-@primary-6: @primary-color; // color used to control the text color of active buttons, don't use, use @primary-color
-@primary-7: color(~`colorPalette('@{primary-color}', 7) `); // replace shade(@primary-color, 5%)
+@primary-1: ~'var(--@{next-prefix}-primary-1)'; // replace tint(@primary-color, 90%)
+@primary-2: ~'var(--@{next-prefix}-primary-2)'; // replace tint(@primary-color, 80%)
+@primary-3: ~'var(--@{next-prefix}-primary-3)'; // unused
+@primary-4: ~'var(--@{next-prefix}-primary-4)'; // unused
+@primary-5: ~'var(--@{next-prefix}-primary-5)';
+@primary-6: ~'var(--@{next-prefix}-primary-6)';
+@primary-7: ~'var(--@{next-prefix}-primary-7)'; // replace shade(@primary-color, 5%)
 @primary-8: color(~`colorPalette('@{primary-color}', 8) `); // unused
 @primary-9: color(~`colorPalette('@{primary-color}', 9) `); // unused
 @primary-10: color(~`colorPalette('@{primary-color}', 10) `); // unused
@@ -112,7 +168,7 @@
 @control-border-radius: @border-radius-base;
 
 // arrow border
-@arrow-border-radius: 2px;
+@arrow-border-radius: @border-radius-sm;
 
 // vertical paddings
 @padding-lg: 24px; // containers
@@ -147,8 +203,8 @@
 
 // LINK
 @link-color: @primary-color;
-@link-hover-color: color(~`colorPalette('@{link-color}', 5) `);
-@link-active-color: color(~`colorPalette('@{link-color}', 7) `);
+@link-hover-color: @primary-color-hover;
+@link-active-color: @primary-color-active;
 @link-decoration: none;
 @link-hover-decoration: none;
 @link-focus-decoration: none;
@@ -172,7 +228,7 @@
 
 // Border color
 @border-color-base: hsv(0, 0, 85%); // base border outline a component
-@border-color-split: hsv(0, 0, 94%); // split border inside a component
+@border-color-split: rgba(0, 0, 0, 0.06); // split border inside a component
 @border-color-inverse: @white;
 @border-width-base: 1px; // width of the border for a component
 @border-style-base: solid; // style of a components border
@@ -579,7 +635,7 @@
 // Progress
 // --
 @progress-default-color: @processing-color;
-@progress-remaining-color: @background-color-base;
+@progress-remaining-color: rgba(0, 0, 0, 0.04);
 @progress-info-text-color: @progress-text-color;
 @progress-radius: 100px;
 @progress-steps-item-bg: #f3f3f3;
@@ -642,7 +698,7 @@
 @table-selected-row-color: inherit;
 @table-selected-row-bg: @primary-1;
 @table-body-selected-sort-bg: @table-selected-row-bg;
-@table-selected-row-hover-bg: darken(@table-selected-row-bg, 2%);
+@table-selected-row-hover-bg: ~'var(--@{next-prefix}-primary-color-active-deprecated-d-02)';
 @table-expanded-row-bg: #fbfbfb;
 @table-padding-vertical: 16px;
 @table-padding-horizontal: 16px;
@@ -687,10 +743,10 @@
 @picker-bg: @component-background;
 @picker-basic-cell-hover-color: @item-hover-bg;
 @picker-basic-cell-active-with-range-color: @primary-1;
-@picker-basic-cell-hover-with-range-color: lighten(@primary-color, 35%);
+@picker-basic-cell-hover-with-range-color: ~'var(--@{next-prefix}-primary-color-deprecated-l-35)';
 @picker-basic-cell-disabled-bg: rgba(0, 0, 0, 0.04);
 @picker-border-color: @border-color-split;
-@picker-date-hover-range-border-color: lighten(@primary-color, 20%);
+@picker-date-hover-range-border-color: ~'var(--@{next-prefix}-primary-color-deprecated-l-20)';
 @picker-date-hover-range-color: @picker-basic-cell-hover-with-range-color;
 @picker-time-panel-column-width: 56px;
 @picker-time-panel-column-height: 224px;
@@ -706,7 +762,7 @@
 @calendar-input-bg: @input-bg;
 @calendar-border-color: @border-color-inverse;
 @calendar-item-active-bg: @item-active-bg;
-@calendar-column-active-bg: fade(@calendar-item-active-bg, 20%);
+@calendar-column-active-bg: ~'var(--@{next-prefix}-primary-color-active-deprecated-f-30)';
 @calendar-full-bg: @calendar-bg;
 @calendar-full-panel-bg: @calendar-full-bg;
 
@@ -888,14 +944,14 @@
 @slider-handle-background-color: @component-background;
 @slider-handle-color: @primary-3;
 @slider-handle-color-hover: @primary-4;
-@slider-handle-color-focus: tint(@primary-color, 20%);
-@slider-handle-color-focus-shadow: fade(@primary-color, 12%);
+@slider-handle-color-focus: ~'var(--@{next-prefix}-primary-color-deprecated-t-20)';
+@slider-handle-color-focus-shadow: ~'var(--@{next-prefix}-primary-color-deprecated-f-12)';
 @slider-handle-color-tooltip-open: @primary-color;
 @slider-handle-size: 14px;
 @slider-handle-margin-top: -5px;
 @slider-handle-shadow: 0;
 @slider-dot-border-color: @border-color-split;
-@slider-dot-border-color-active: tint(@primary-color, 50%);
+@slider-dot-border-color-active: ~'var(--@{next-prefix}-primary-color-deprecated-t-50)';
 @slider-disabled-color: @disabled-color;
 @slider-disabled-background-color: @component-background;
 
@@ -935,7 +991,7 @@
 @transfer-disabled-bg: @disabled-bg;
 @transfer-list-height: 200px;
 @transfer-item-hover-bg: @item-hover-bg;
-@transfer-item-selected-hover-bg: darken(@item-active-bg, 2%);
+@transfer-item-selected-hover-bg: ~'var(--@{next-prefix}-primary-color-active-deprecated-d-02)';
 @transfer-item-padding-vertical: 6px;
 @transfer-list-search-icon-top: 12px;
 
@@ -949,17 +1005,17 @@
 
 // Alert
 // ---
-@alert-success-border-color: ~`colorPalette('@{success-color}', 3) `;
-@alert-success-bg-color: ~`colorPalette('@{success-color}', 1) `;
+@alert-success-border-color: @success-color-deprecated-border;
+@alert-success-bg-color: @success-color-deprecated-bg;
 @alert-success-icon-color: @success-color;
-@alert-info-border-color: ~`colorPalette('@{info-color}', 3) `;
-@alert-info-bg-color: ~`colorPalette('@{info-color}', 1) `;
+@alert-info-border-color: @info-color-deprecated-border;
+@alert-info-bg-color: @info-color-deprecated-bg;
 @alert-info-icon-color: @info-color;
-@alert-warning-border-color: ~`colorPalette('@{warning-color}', 3) `;
-@alert-warning-bg-color: ~`colorPalette('@{warning-color}', 1) `;
+@alert-warning-border-color: @warning-color-deprecated-border;
+@alert-warning-bg-color: @warning-color-deprecated-bg;
 @alert-warning-icon-color: @warning-color;
-@alert-error-border-color: ~`colorPalette('@{error-color}', 3) `;
-@alert-error-bg-color: ~`colorPalette('@{error-color}', 1) `;
+@alert-error-border-color: @error-color-deprecated-border;
+@alert-error-bg-color: @error-color-deprecated-bg;
 @alert-error-icon-color: @error-color;
 @alert-message-color: @heading-color;
 @alert-text-color: @text-color;
