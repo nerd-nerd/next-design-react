@@ -4,4 +4,5 @@ module.exports = {
     'stylelint-config-recommended-less',
     'stylelint-config-rational-order',
   ],
+  customSyntax: require('postcss-less'),
 };
