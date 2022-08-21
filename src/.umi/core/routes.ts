@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React from 'react';
-import { ApplyPluginsType } from '/Applications/workspace/zpqa/demo/vueuse/next-design-react/node_modules/umi/node_modules/@umijs/runtime';
+import { ApplyPluginsType } from '/Applications/workspace/zpqa/demo/next-design-react/node_modules/umi/node_modules/@umijs/runtime';
 import * as umiExports from './umiExports';
 import { plugin } from './plugin';
 
@@ -12,7 +12,7 @@ export function getRoutes() {
     "wrappers": [require('../dumi/layout').default],
     "component": ((props) => {
         const React = require('react');
-        const { default: getDemoRenderArgs } = require('/Applications/workspace/zpqa/demo/vueuse/next-design-react/node_modules/@umijs/preset-dumi/lib/plugins/features/demo/getDemoRenderArgs');
+        const { default: getDemoRenderArgs } = require('/Applications/workspace/zpqa/demo/next-design-react/node_modules/@umijs/preset-dumi/lib/plugins/features/demo/getDemoRenderArgs');
         const { default: Previewer } = require('dumi-theme-default/es/builtins/Previewer.js');
         const { usePrefersColor, context } = require('dumi/theme');
 
@@ -55,15 +55,15 @@ export function getRoutes() {
     "__dumiRoot": true,
     "layout": false,
     "path": "/",
-    "wrappers": [require('../dumi/layout').default, require('/Applications/workspace/zpqa/demo/vueuse/next-design-react/node_modules/dumi-theme-default/es/layout.js').default],
+    "wrappers": [require('../dumi/layout').default, require('/Applications/workspace/zpqa/demo/next-design-react/node_modules/dumi-theme-default/es/layout.js').default],
     "routes": [
       {
         "path": "/components/button",
-        "component": require('/Applications/workspace/zpqa/demo/vueuse/next-design-react/src/Button/index.md').default,
+        "component": require('/Applications/workspace/zpqa/demo/next-design-react/src/Button/index.md').default,
         "exact": true,
         "meta": {
           "filePath": "src/Button/index.md",
-          "updatedTime": 1660987645140,
+          "updatedTime": 1661054116000,
           "componentName": "Button",
           "title": "Button",
           "nav": {
@@ -102,11 +102,11 @@ export function getRoutes() {
       },
       {
         "path": "/components/foo",
-        "component": require('/Applications/workspace/zpqa/demo/vueuse/next-design-react/src/Foo/index.md').default,
+        "component": require('/Applications/workspace/zpqa/demo/next-design-react/src/Foo/index.md').default,
         "exact": true,
         "meta": {
           "filePath": "src/Foo/index.md",
-          "updatedTime": 1660989085810,
+          "updatedTime": 1661054116000,
           "componentName": "Foo",
           "nav": {
             "title": "Components",
@@ -135,11 +135,11 @@ export function getRoutes() {
       },
       {
         "path": "/",
-        "component": require('/Applications/workspace/zpqa/demo/vueuse/next-design-react/docs/index.md').default,
+        "component": require('/Applications/workspace/zpqa/demo/next-design-react/docs/index.md').default,
         "exact": true,
         "meta": {
           "filePath": "docs/index.md",
-          "updatedTime": 1660972640284,
+          "updatedTime": 1661054116000,
           "hero": {
             "title": "next-design-react",
             "desc": "<div class=\"markdown\"><p>next-design-react site example</p></div>",

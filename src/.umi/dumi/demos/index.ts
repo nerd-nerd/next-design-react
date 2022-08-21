@@ -5,7 +5,7 @@ import { dynamic } from 'dumi';
 export default {
   'Button-demo': {
     component: function DumiDemo() {
-  var _interopRequireDefault = require("/Applications/workspace/zpqa/demo/vueuse/next-design-react/node_modules/@umijs/babel-preset-umi/node_modules/@babel/runtime/helpers/interopRequireDefault.js")["default"];
+  var _interopRequireDefault = require("/Applications/workspace/zpqa/demo/next-design-react/node_modules/@umijs/babel-preset-umi/node_modules/@babel/runtime/helpers/interopRequireDefault.js")["default"];
 
   var _react = _interopRequireDefault(require("react"));
 
@@ -25,7 +25,7 @@ export default {
   },
   'Button-demo-1': {
     component: function DumiDemo() {
-  var _interopRequireDefault = require("/Applications/workspace/zpqa/demo/vueuse/next-design-react/node_modules/@umijs/babel-preset-umi/node_modules/@babel/runtime/helpers/interopRequireDefault.js")["default"];
+  var _interopRequireDefault = require("/Applications/workspace/zpqa/demo/next-design-react/node_modules/@umijs/babel-preset-umi/node_modules/@babel/runtime/helpers/interopRequireDefault.js")["default"];
 
   var _react = _interopRequireDefault(require("react"));
 
@@ -52,7 +52,7 @@ export default {
   },
   'Foo-demo': {
     component: function DumiDemo() {
-  var _interopRequireDefault = require("/Applications/workspace/zpqa/demo/vueuse/next-design-react/node_modules/@umijs/babel-preset-umi/node_modules/@babel/runtime/helpers/interopRequireDefault.js")["default"];
+  var _interopRequireDefault = require("/Applications/workspace/zpqa/demo/next-design-react/node_modules/@umijs/babel-preset-umi/node_modules/@babel/runtime/helpers/interopRequireDefault.js")["default"];
 
   var _react = _interopRequireDefault(require("react"));
 

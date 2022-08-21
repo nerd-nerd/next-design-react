@@ -4,8 +4,8 @@ import '@@/core/devScripts';
 import { plugin } from './core/plugin';
 import './core/pluginRegister';
 import { createHistory } from './core/history';
-import { ApplyPluginsType } from '/Applications/workspace/zpqa/demo/vueuse/next-design-react/node_modules/umi/node_modules/@umijs/runtime';
-import { renderClient } from '/Applications/workspace/zpqa/demo/vueuse/next-design-react/node_modules/@umijs/renderer-react/dist/index.js';
+import { ApplyPluginsType } from '/Applications/workspace/zpqa/demo/next-design-react/node_modules/umi/node_modules/@umijs/runtime';
+import { renderClient } from '/Applications/workspace/zpqa/demo/next-design-react/node_modules/@umijs/renderer-react/dist/index.js';
 import { getRoutes } from './core/routes';
 
 

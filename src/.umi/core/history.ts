@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { createBrowserHistory, History } from '/Applications/workspace/zpqa/demo/vueuse/next-design-react/node_modules/umi/node_modules/@umijs/runtime';
+import { createBrowserHistory, History } from '/Applications/workspace/zpqa/demo/next-design-react/node_modules/umi/node_modules/@umijs/runtime';
 
 let options = {
   "basename": "/"
