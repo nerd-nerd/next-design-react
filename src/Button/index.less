@@ -5,8 +5,10 @@
   line-height: 35px;
   text-align: center;
   background: lightskyblue;
+
   &.n-button-loading {
     overflow: hidden;
+
     .n-button-loading-container {
       display: inline-block;
       width: 20px;
@@ -20,15 +22,18 @@
       animation: rotate 1s linear infinite;
     }
   }
+
   .n-button-text-container {
     display: inline-block;
     vertical-align: middle;
   }
 }
+
 @keyframes rotate {
   from {
     transform: rotate(0);
   }
+
   to {
     transform: rotate(360deg);
   }
