@@ -5,4 +5,7 @@ module.exports = {
     'stylelint-config-rational-order',
   ],
   customSyntax: require('postcss-less'),
+  rules: {
+    'string-quotes': 'single',
+  },
 };
