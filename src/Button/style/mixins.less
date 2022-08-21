@@ -1,0 +1,206 @@
+// 按钮大小
+.button-size(@height; @padding-horizontal; @font-size; @border-radius) {
+  @padding-vertical: max(
+    (round(((@height - @font-size * @line-height-base) / 2) * 10) / 10) - @border-width-base,
+    0
+  );
+
+  height: @height;
+  padding: @padding-vertical @padding-horizontal;
+  font-size: @font-size;
+  border-radius: @border-radius;
+}
+
+.button-color(@color; @background; @border) {
+  color: @color;
+  border-color: @border; // a inside Button which only work in Chrome
+  & when not(@background = null) {
+    background: @background;
+  }
+  // http://stackoverflow.com/a/17253457
+  > a:only-child {
+    color: currentcolor;
+
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: transparent;
+      content: '';
+    }
+  }
+}
+
+.button-variant-primary(@color; @background; @backgroundHover: yellow; @backgroundActive: yellow) {
+  .button-color(@color; @background; @background);
+
+  text-shadow: @btn-text-shadow;
+  box-shadow: @btn-primary-shadow;
+
+  &:hover,
+  &:focus {
+    & when (@theme = dark) {
+      .button-color(
+        @color; ~`colorPalette('@{background}', 7) `; ~`colorPalette('@{background}', 7) `
+      );
+    }
+    & when (not (@theme = dark) and not (@theme = variable)) {
+      .button-color(
+        @color; ~`colorPalette('@{background}', 5) `; ~`colorPalette('@{background}', 5) `
+      );
+    }
+    & when (@theme = variable) {
+      .button-color(@color; @backgroundHover; @backgroundHover);
+    }
+  }
+
+  &:active {
+    & when (@theme = dark) {
+      .button-color(
+        @color; ~`colorPalette('@{background}', 5) `; ~`colorPalette('@{background}', 5) `
+      );
+    }
+    & when (not (@theme = dark) and not (@theme = variable)) {
+      .button-color(
+        @color; ~`colorPalette('@{background}', 7) `; ~`colorPalette('@{background}', 7) `
+      );
+    }
+    & when (@theme = variable) {
+      .button-color(@color; @backgroundActive; @backgroundActive);
+    }
+  }
+
+  // .button-disabled();
+}
+
+.button-variant-other(@color; @background; @border) {
+  .button-color(@color; @background; @border);
+
+  &:hover,
+  &:focus {
+    & when (@theme = dark) {
+      .button-color(@primary-5; @background; @primary-5);
+    }
+    & when (not (@theme = dark) and not (@theme = variable)) {
+      .button-color(
+        ~`colorPalette('@{btn-primary-bg}', 5) `; @background;
+        ~`colorPalette('@{btn-primary-bg}', 5) `
+      );
+    }
+    & when (@theme = variable) {
+      .button-color(@primary-color-hover; @background; @primary-color-hover);
+    }
+  }
+
+  &:active {
+    & when (@theme = dark) {
+      .button-color(@primary-7; @background; @primary-7);
+    }
+    & when (not (@theme = dark) and not (@theme = variable)) {
+      .button-color(
+        ~`colorPalette('@{btn-primary-bg}', 7) `; @background;
+        ~`colorPalette('@{btn-primary-bg}', 7) `
+      );
+    }
+    & when (@theme = variable) {
+      .button-color(@primary-color-active; @background; @primary-color-active);
+    }
+  }
+  // .button-disabled();
+}
+
+// 按钮基础样式
+.btn() {
+  position: relative;
+  display: inline-block;
+  font-weight: @btn-font-weight;
+  white-space: nowrap;
+  text-align: center;
+  background-image: none;
+  border: @btn-border-width @btn-border-style transparent;
+  box-shadow: @btn-shadow;
+  cursor: pointer;
+  transition: all 0.3s @ease-in-out;
+  user-select: none;
+  touch-action: manipulation;
+  .button-size(
+    @btn-height-base; @btn-padding-horizontal-base; @font-size-base; @btn-border-radius-base
+  );
+  > .@{iconfont-css-prefix} {
+    line-height: 1;
+  }
+
+  &,
+  &:active,
+  &:focus {
+    outline: 0;
+  }
+}
+
+// primary button style
+.btn-primary() {
+  .button-variant-primary(@btn-primary-color; @btn-primary-bg; @primary-color-hover; @primary-color-active);
+}
+
+// default button style
+.btn-default() {
+  .button-variant-other(@btn-default-color; @btn-default-bg; @btn-default-border; );
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+    background: @btn-default-bg;
+  }
+}
+// ghost button style
+.btn-ghost() {
+  .button-variant-other(@btn-ghost-color, @btn-ghost-bg, @btn-ghost-border);
+}
+// dashed button style
+.btn-dashed() {
+  .button-variant-other(@btn-default-color, @btn-default-bg, @btn-default-border);
+
+  border-style: dashed;
+}
+// text button style
+.btn-text() {
+  .button-variant-other(@text-color, transparent, transparent);
+
+  box-shadow: none;
+
+  &:hover,
+  &:focus {
+    color: @text-color;
+    background: @btn-text-hover-bg;
+    border-color: transparent;
+  }
+
+  &:active {
+    color: @text-color;
+    /* stylelint-disable-next-line function-no-unknown */
+    background: fadein(@btn-text-hover-bg, 1%);
+    border-color: transparent;
+  }
+
+  // .button-disabled(@disabled-color; transparent; transparent);
+}
+// link button style
+.btn-link() {
+  .button-variant-other(@link-color, transparent, transparent);
+
+  box-shadow: none;
+
+  &:hover {
+    background: @btn-link-hover-bg;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: transparent;
+  }
+  // .button-disabled(@disabled-color; transparent; transparent);
+}

@@ -1,0 +1,32 @@
+@import '../../style/themes/index.less';
+@import './mixins.less';
+
+@btn-prefix-cls: ~'@{next-prefix}-btn';
+
+.@{btn-prefix-cls} {
+  .btn();
+
+  &-primary {
+    .btn-primary();
+  }
+
+  &-default {
+    .btn-default();
+  }
+
+  &-ghost {
+    .btn-ghost();
+  }
+
+  &-dashed {
+    .btn-dashed();
+  }
+
+  &-text {
+    .btn-text();
+  }
+
+  &-link {
+    .btn-link();
+  }
+};
