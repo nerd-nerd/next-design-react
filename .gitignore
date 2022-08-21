@@ -20,6 +20,8 @@
 .umi-production
 .umi-test
 .env.local
+/src/.umi
+
 # ide
 !/.vscode
 /.idea
