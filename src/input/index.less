@@ -1,13 +1,15 @@
-.h-button {
+.n-button {
   width: 100px;
   height: 35px;
   font-size: 20px;
   line-height: 35px;
   text-align: center;
   background: lightskyblue;
-  &.h-button-loading {
+
+  &.n-button-loading {
     overflow: hidden;
-    .h-button-loading-container {
+
+    .n-button-loading-container {
       display: inline-block;
       width: 20px;
       height: 20px;
@@ -20,15 +22,18 @@
       animation: rotate 1s linear infinite;
     }
   }
-  .h-button-text-container {
+
+  .n-button-text-container {
     display: inline-block;
     vertical-align: middle;
   }
 }
+
 @keyframes rotate {
   from {
     transform: rotate(0);
   }
+
   to {
     transform: rotate(360deg);
   }
