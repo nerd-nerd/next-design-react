@@ -1,0 +1,73 @@
+@import '../color/colors.less';
+
+// 主题
+@theme: default;
+
+// class 前缀
+@next-prefix: next-design;
+
+// ------------ Colors----------------
+// Primary
+@primary-color: @blue-6;
+@primary-color-hover: color(~`colorPalette('@{primary-color}', 5) `);
+@primary-color-active: color(~`colorPalette('@{primary-color}', 7) `);
+
+@black: #000;
+
+// ------------ Base Scaffolding Variables -----------
+@font-size-base: 14px;
+@border-radius-base: 2px;
+@line-height-base: 1.5715;
+@text-color: fade(@black, 85%);
+@component-background: #fff;
+
+// ----------- vertical paddings -----
+@padding-md: 16px;
+
+// ----------- height rules ----------
+@height-base: 32px;
+
+// ------------ ICONFONT----------------
+@iconfont-css-prefix: anticon;
+
+// -------------- LINK -----------------
+@link-color: @primary-color;
+
+// ----------- Animation -------------
+@ease-in-out: cubic-bezier(0.645, 0.045, 0.355, 1);
+
+// ----------- Border color ----------
+@border-color-base: hsv(0, 0, 85%);
+@border-width-base: 1px;
+@border-style-base: solid;
+
+// ---------- Disabled states ---------
+@disabled-color: fade(#000, 25%);
+
+// ------------ Buttons --------------
+@btn-font-weight: 400;
+@btn-border-radius-base: @border-radius-base;
+@btn-border-width: @border-width-base;
+@btn-border-style: @border-style-base;
+@btn-shadow: 0 2px 0 rgba(0, 0, 0, 0.015);
+@btn-primary-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+@btn-text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
+
+@btn-primary-color: #fff;
+@btn-primary-bg: @primary-color;
+
+@btn-default-color: @text-color;
+@btn-default-bg: @component-background;
+@btn-default-border: @border-color-base;
+
+@btn-ghost-color: @text-color;
+@btn-ghost-bg: transparent;
+@btn-ghost-border: @border-color-base;
+
+@btn-text-hover-bg: rgba(0, 0, 0, 0.018);
+
+@btn-height-base: @height-base;
+
+@btn-padding-horizontal-base: @padding-md - 1px;
+
+@btn-link-hover-bg: transparent;
