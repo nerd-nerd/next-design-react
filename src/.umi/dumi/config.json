@@ -1,0 +1,61 @@
+{
+  "menus": {
+    "en-US": {
+      "/components": [
+        {
+          "title": "components",
+          "path": "/components/button",
+          "meta": {},
+          "children": [
+            {
+              "path": "/components/button",
+              "title": "Button",
+              "meta": {}
+            }
+          ]
+        },
+        {
+          "title": "Components",
+          "path": "/components/foo",
+          "meta": {},
+          "children": [
+            {
+              "path": "/components/foo",
+              "title": "Foo",
+              "meta": {}
+            }
+          ]
+        }
+      ],
+      "*": [
+        {
+          "path": "/",
+          "title": "Hello next-design-react!",
+          "meta": {}
+        }
+      ]
+    }
+  },
+  "locales": [
+    {
+      "name": "en-US",
+      "label": "English"
+    }
+  ],
+  "navs": {
+    "en-US": [
+      {
+        "title": "Components",
+        "path": "/components"
+      }
+    ]
+  },
+  "title": "next-design-react",
+  "logo": "https://user-images.githubusercontent.com/9554297/83762004-a0761b00-a6a9-11ea-83b4-9c8ff721d4b8.png",
+  "mode": "site",
+  "repository": {
+    "url": "",
+    "branch": "master"
+  },
+  "theme": {}
+}
