@@ -3,7 +3,7 @@
  */
 export interface ButtonPropsType {
   /** 按钮样式 */
-  type?: 'default' | 'primary' | 'warn';
+  type?: 'default' | 'primary' | 'ghost' | 'dashed ' | 'link' | 'text ';
   /** 是否禁用按钮 */
   disabled?: boolean;
   /** 按钮点触事件 */

@@ -12,8 +12,8 @@
     "test": "umi-test",
     "test:coverage": "umi-test --coverage",
     "prepublishOnly": "npm run build",
-    "less:lint": "stylelint --fix --ext .less src/",
-    "lint": "eslint --fix --ext .tsx,.ts src/"
+    "less:lint": "stylelint --fix",
+    "lint": "eslint --fix"
   },
   "files": [
     "dist"
@@ -21,14 +21,13 @@
   "module": "dist/esm/index.js",
   "typings": "dist/esm/index.d.ts",
   "lint-staged": {
-    "*.{js,jsx,md,json}": [
+    "*.{md,json}": [
       "prettier --write"
     ],
-    "src/**/*.less": [
+    "*.less": [
       "npm run less:lint"
     ],
     "*.ts?(x)": [
-      "prettier --parser=typescript --write",
       "npm run lint"
     ]
   },
@@ -56,6 +55,7 @@
     "gh-pages": "^3.0.0",
     "husky": "^8.0.1",
     "lint-staged": "^10.0.7",
+    "postcss-less": "^6.0.0",
     "prettier": "^2.2.1",
     "stylelint": "^14.10.0",
     "stylelint-config-rational-order": "^0.1.2",

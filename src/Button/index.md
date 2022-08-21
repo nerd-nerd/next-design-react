@@ -18,11 +18,12 @@ import { Button } from 'next-design-react';
 export default () => {
   return (
     <>
-      <Button>default</Button>
+      <Button type="primary">Primary Button</Button>
+      <Button>Default Button</Button>
+      <Button type="dashed">Dashed Button</Button>
       <br />
-      <Button type="primary">primary</Button>
-      <br />
-      <Button type="warn">warn</Button>
+      <Button type="text">Text Button</Button>
+      <Button type="link">Link Button</Button>
     </>
   );
 };
