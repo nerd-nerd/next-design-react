@@ -1,0 +1,50 @@
+{
+  "Button": {
+    "default": [
+      {
+        "identifier": "type",
+        "description": "按钮样式",
+        "type": "\"default\" | \"primary\" | \"warn\"",
+        "default": "default"
+      },
+      {
+        "identifier": "disabled",
+        "description": "是否禁用按钮",
+        "type": "boolean",
+        "default": "false"
+      },
+      {
+        "identifier": "onPress",
+        "description": "按钮点触事件",
+        "type": "(e?: SyntheticEvent<Element, Event>) => void"
+      },
+      {
+        "identifier": "loading",
+        "description": "按钮是否显示加载中",
+        "type": "boolean",
+        "default": "false"
+      },
+      {
+        "identifier": "className",
+        "description": "额外的class名",
+        "type": "string",
+        "default": ""
+      },
+      {
+        "identifier": "activeClassName",
+        "description": "按钮active状态下额外的class名",
+        "type": "string",
+        "default": ""
+      }
+    ]
+  },
+  "Foo": {
+    "default": [
+      {
+        "identifier": "title",
+        "type": "string",
+        "required": true
+      }
+    ]
+  }
+}
