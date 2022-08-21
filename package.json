@@ -12,8 +12,8 @@
     "test": "umi-test",
     "test:coverage": "umi-test --coverage",
     "prepublishOnly": "npm run build",
-    "less:lint": "stylelint --fix --ext .less src/",
-    "lint": "eslint --fix --ext .tsx,.ts src/"
+    "less:lint": "stylelint --fix",
+    "lint": "eslint --fix"
   },
   "files": [
     "dist"
@@ -24,7 +24,7 @@
     "*.{js,jsx,md,json}": [
       "prettier --write"
     ],
-    "src/**/*.less": [
+    "*.less": [
       "npm run less:lint"
     ],
     "*.ts?(x)": [
