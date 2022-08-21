@@ -21,14 +21,13 @@
   "module": "dist/esm/index.js",
   "typings": "dist/esm/index.d.ts",
   "lint-staged": {
-    "*.{js,jsx,md,json}": [
+    "*.{md,json}": [
       "prettier --write"
     ],
     "*.less": [
       "npm run less:lint"
     ],
     "*.ts?(x)": [
-      "prettier --parser=typescript --write",
       "npm run lint"
     ]
   },
