@@ -5,7 +5,7 @@ import classNames from 'classnames'
 
 const prefixCls = 'next-design-btn'
 
-const Button: React.FC<ButtonPropsType> = (props) => {
+const Button: React.FC<ButtonPropsType> = props => {
   const { type } = props
   const classes = classNames({
     [prefixCls]: true,

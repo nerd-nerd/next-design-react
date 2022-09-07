@@ -1,13 +1,22 @@
 {
   "extends": [
     "eslint:recommended",
-    "standard",
+    "plugin:prettier/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended"
   ],
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint"],
+  "plugins": ["@typescript-eslint", "prettier"],
   "rules": {
-    "@typescript-eslint/no-non-null-assertion": "off"
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        "semi": false, // 末尾分号
+        "singleQuote": true, // 使用单引号
+        "arrowParens": "avoid", // 箭头函数括号
+        "trailingComma": "none" // 最后key不跟分号
+      }
+    ]
   }
 }
